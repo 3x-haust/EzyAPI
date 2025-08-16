@@ -2,7 +2,8 @@ from example.user.entity.user_entity import UserEntity
 from ezyapi.database import EzyEntityBase
 from typing import TYPE_CHECKING, List
 
-from ezyapi.database.entity import ManyToOne
+from ezyapi.database.relationships import ManyToOne
+
 
 class PostEntity(EzyEntityBase):
     def __init__(self, id: int = None, title: str = "", content: str = "", user_id: int = None):
