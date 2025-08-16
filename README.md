@@ -11,16 +11,6 @@ This README is the English version.
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
-- [How to Contribute](#how-to-contribute)
-  - [Fork the Project](#fork-the-project)
-  - [Create a Branch](#create-a-branch)
-    - [Branch Naming Convention](#branch-naming-convention)
-  - [Work and Commit](#work-and-commit)
-    - [Commit Message Convention](#commit-message-convention)
-    - [Commit Examples](#commit-examples)
-  - [Push to Remote Repository](#push-to-remote-repository)
-  - [Create Pull Request (PR)](#create-pull-request-pr)
-  - [Merge](#merge)
 - [First Steps](#first-steps)
     - [Background](#background)
     - [Getting Started](#getting-started)
@@ -62,96 +52,6 @@ This README is the English version.
       - [Check Information](#check-information)
       - [Initialize Project](#initialize-project)
     - [Project Structure](#project-structure)
-
-</br>
-</br>
-</br>
-
-# How to Contribute
-
-Anyone can freely contribute to Ezy API!  
-Please follow the procedures below to participate comfortably.
-
-## Fork the Project
-
-Please fork the project to work in your personal repository and then create a PR.
-
-## Create a Branch
-
-When starting new work, please create a **branch**. Branches are usually written in the format `feature/{feature-name}`.
-
-```bash
-# Move to main branch and sync to latest state
-$ git checkout main
-$ git pull origin main
-
-# Create and switch to new branch
-$ git checkout -b feature/feature-name
-```
-
-### Branch Naming Convention
-
-Please write branch names according to the nature of your work.
-
-| Type | Description | Example |
-|:---:|:---|:---|
-| `feature/` | New feature development | `feature/login-api`, `feature/add-user-api` |
-| `fix/` | Bug fixes | `fix/login-bug`, `fix/routing-error` |
-| `docs/` | Documentation work (README, comments, etc.) | `docs/update-readme`, `docs/api-docs` |
-| `refactor/` | Code refactoring | `refactor/login-service`, `refactor/db-helper` |
-| `test/` | Adding and modifying test code | `test/user-service-test` |
-| `chore/` | Build configuration, package management, other maintenance | `chore/update-deps`, `chore/ci-config` |
-
-> **Tip**
-> 
-> It's good to have branch names clearly indicate the work content.
-
-## Work and Commit
-
-After completing your work, write commit messages referring to the **commit convention** below.
-
-### Commit Message Convention
-
-| Tag | Description |
-|:---:|:---|
-| `feat` | Add new feature |
-| `fix` | Bug fix |
-| `docs` | Documentation modification (README, comments, etc.) |
-| `style` | Code formatting, spelling corrections, etc. - changes that don't affect code behavior |
-| `refactor` | Code refactoring (improving internal logic without behavioral changes) |
-| `test` | Adding and modifying test code |
-| `chore` | Build tasks, package manager configuration, maintenance work, etc. |
-
-### Commit Examples
-```bash
-$ git commit -m "feat: add user API"
-$ git commit -m "fix: correct wrong router path"
-$ git commit -m "docs: add installation instructions to README"
-```
-
-## Push to Remote Repository
-
-Push your created branch to the remote repository.
-
-```bash
-$ git push origin feature/feature-name
-```
-
-## Create Pull Request (PR)
-
-- Create a **Pull Request** on GitHub.
-- Write a brief description of what work you've done in the PR description.
-- Then proceed with code review with team members.
-
-## Merge
-
-- After review is complete and approval is received, **merge to main branch**.
-- After merging, always sync the `main` branch to the latest before other work.
-
-```bash
-$ git checkout main
-$ git pull origin main
-```
 
 </br>
 </br>
@@ -217,8 +117,6 @@ Let's start by creating the main.py file. This file contains the main module tha
 ```python
 # main.py
 from ezyapi import EzyAPI
-from ezyapi.database import DatabaseConfig
-from user.user_service import UserService
 from app_service import AppService
 
 app = EzyAPI()
@@ -816,8 +714,7 @@ When you generate a resource with the `ezy generate res <name>` command, the fol
 Additionally, a test file is created at `test/test_<name>_service.py`.
 
 > **Note**
->
-> - The CLI uses color codes for better readability in terminals that support ANSI colors.
-> - The `test` command requires pytest to be installed. It's included in the default dependencies of new projects.
-> - The `lint` command requires flake8. You may need to install it separately.
-> - The `update` command currently only simulates updates and doesn't perform actual updates.
+> * The CLI uses color codes to enhance readability in terminals that support ANSI colors.
+> * The `test` command requires pytest to be installed. It is included in the default dependencies of new projects.
+> * The `lint` command requires flake8. You may need to install it separately.
+> * The `update` command currently only simulates updates without actually performing them.
