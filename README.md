@@ -119,8 +119,6 @@ Let's start by creating a simple main.py file. This file contains the main modul
 ```python
 # main.py
 from ezyapi import EzyAPI
-from ezyapi.database import DatabaseConfig
-from user.user_service import UserService
 from app_service import AppService
 
 if __name__ == "__main__":
